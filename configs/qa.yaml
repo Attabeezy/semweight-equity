@@ -1,0 +1,41 @@
+# Configuration for TyDiQA question answering experiments
+
+# Inherit from default config
+defaults:
+  - default
+
+# Data specific to QA
+data:
+  tydiqa_dir: "data/raw/tydiqa"
+  split: "dev"
+  languages:
+    - en  # English
+    - ar  # Arabic
+    - bn  # Bengali
+    - fi  # Finnish
+    - id  # Indonesian
+    - ko  # Korean
+    - ru  # Russian
+    - sw  # Swahili
+    - te  # Telugu
+  include_context: true
+  max_context_length: 2048
+
+# QA-specific SWELM parameters
+swelm:
+  alpha: 0.55
+  beta: 1.1
+
+# Generation parameters
+generation:
+  max_new_tokens: 128
+  temperature: 0.1
+  top_p: 0.95
+  do_sample: false
+
+# Evaluation
+evaluation:
+  metrics:
+    - exact_match
+    - f1
+  output_dir: "results/qa"

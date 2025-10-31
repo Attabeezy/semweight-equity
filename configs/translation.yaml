@@ -1,0 +1,41 @@
+# Configuration for FLORES-200 translation experiments
+
+# Inherit from default config
+defaults:
+  - default
+
+# Data specific to translation
+data:
+  flores_dir: "data/raw/flores200"
+  split: "devtest"
+  languages:
+    - eng_Latn  # English
+    - spa_Latn  # Spanish
+    - fra_Latn  # French
+    - deu_Latn  # German
+    - zho_Hans  # Chinese (Simplified)
+    - arb_Arab  # Arabic
+    - hin_Deva  # Hindi
+    - jpn_Jpan  # Japanese
+    - kor_Hang  # Korean
+    - swh_Latn  # Swahili
+  source_lang: "eng_Latn"
+
+# Translation-specific SWELM parameters
+swelm:
+  alpha: 0.6
+  beta: 1.2
+
+# Generation parameters
+generation:
+  max_new_tokens: 256
+  temperature: 0.3
+  top_p: 0.9
+  num_beams: 4
+
+# Evaluation
+evaluation:
+  metrics:
+    - bleu
+    - chrf
+  output_dir: "results/translation"

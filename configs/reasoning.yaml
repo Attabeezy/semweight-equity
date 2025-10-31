@@ -1,0 +1,38 @@
+# Configuration for StrategyQA reasoning experiments
+
+# Inherit from default config
+defaults:
+  - default
+
+# Data specific to reasoning
+data:
+  strategyqa_dir: "data/raw/strategyqa"
+  split: "train"
+  languages:
+    - en  # English
+    - es  # Spanish
+    - fr  # French
+    - de  # German
+    - zh  # Chinese
+    - ar  # Arabic
+    - hi  # Hindi
+  use_chain_of_thought: true
+
+# Reasoning-specific SWELM parameters
+swelm:
+  alpha: 0.5
+  beta: 1.0
+
+# Generation parameters
+generation:
+  max_new_tokens: 512
+  temperature: 0.7
+  top_p: 0.9
+  do_sample: true
+
+# Evaluation
+evaluation:
+  metrics:
+    - exact_match
+    - accuracy
+  output_dir: "results/reasoning"
