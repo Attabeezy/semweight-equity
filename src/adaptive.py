@@ -25,6 +25,9 @@ class AdaptiveSampler:
             temperature: Temperature for softmax sampling
             min_weight: Minimum weight threshold
         """
+        if temperature <= 0:
+            raise ValueError("Temperature must be positive")
+
         self.sampling_strategy = sampling_strategy
         self.temperature = temperature
         self.min_weight = min_weight

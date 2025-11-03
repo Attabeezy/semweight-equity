@@ -48,3 +48,11 @@ class TestAdaptiveSampler:
             sampler = AdaptiveSampler(sampling_strategy=strategy)
             probs = sampler.compute_sampling_probabilities(weights)
             assert np.isclose(probs.sum(), 1.0)
+
+    def test_non_positive_temperature_raises_error(self):
+        """Test that a non-positive temperature raises a ValueError"""
+        with pytest.raises(ValueError):
+            AdaptiveSampler(temperature=0)
+
+        with pytest.raises(ValueError):
+            AdaptiveSampler(temperature=-1.0)
