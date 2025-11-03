@@ -20,6 +20,13 @@ class TestMetrics:
         
         em = compute_exact_match(predictions, references)
         assert em == 2/3
+
+    def test_exact_match_empty(self):
+        """Test exact match with empty lists"""
+        predictions = []
+        references = []
+        em = compute_exact_match(predictions, references)
+        assert em == 0.0
         
     def test_f1_score(self):
         """Test F1 score computation"""

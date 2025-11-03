@@ -33,6 +33,8 @@ def compute_exact_match(predictions: List[str], references: List[str]) -> float:
     Returns:
         Exact match score
     """
+    if not predictions:
+        return 0.0
     matches = sum(pred.strip() == ref.strip() for pred, ref in zip(predictions, references))
     return matches / len(predictions)
 
