@@ -23,7 +23,7 @@ SWELM addresses the challenge of equitable performance across languages in multi
 ### Installation
 
 ```bash
-git clone https://github.com/yourusername/semweight-equity.git
+git clone https://github.com/Attabeezy/semweight-equity.git
 cd semweight-equity
 pip install -r requirements.txt
 pip install -e .
