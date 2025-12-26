@@ -93,9 +93,9 @@ If you use this code in your research, please cite:
 ```bibtex
 @article{swelm2024,
   title={SWELM: Semantic Weighting for Equitable Language Modeling},
-  author={Your Name},
+  author={Attabra Benjamin Ekow},
   journal={arXiv preprint arXiv:XXXX.XXXXX},
-  year={2024}
+  year={2025}
 }
 ```
 
